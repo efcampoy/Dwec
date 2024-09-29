@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relacion1.5</title>
+</head>
+<body>
+    <h1>Relacion ejercicios 1.5</h1>
+    <div>
+        <h2>Ejercicio 6</h2>
+        <p>
+            <script>
+
+                /*Write a function called onlyUniques that can take in any number of arguments,
+                and returns an array of only the unique arguments*/
+
+                function onlyUniques(...args) {
+                    const unicArray = [];
+
+                    for(let i = 0; i< args.length;i++){
+
+                        for(let j = 1; j<args.length;j++){
+
+                            if(args[i] === args[j] && !unicArray.includes(args[i])){
+
+                                unicArray.push(args[i]);
+                            }
+                        }
+                    }
+
+                    return unicArray;
+                }
+
+                document.write(onlyUniques('cat', 'cat', 'dog', 'pig'));
+                document.write('<br>');
+                document.write(onlyUniques(1, 4, 7, 1, 2, 7, 4));
+
+            </script>
+        </p>
+    </div>
+    <div>
+        <h2>Ejercicio 7</h2>
+        <p>
+            <script>
+
+                /*
+                Write a function called squareAndSum that takes in any number of arguments,
+                squares them, then sums all of the squares.
+                */
+
+                function squareAndSum(...args){
+
+                    let sumatoriaCuadrados = 0;
+                    let elevarCuadrado = 0;
+
+                    for(let i = 0; i < args.length;i++){
+                        
+                        elevarCuadrado = Math.pow(args[i],2);
+                        sumatoriaCuadrados += elevarCuadrado;
+                    }
+                    return sumatoriaCuadrados
+                }
+                document.write(squareAndSum(2, 4, 3));
+                document.write("<br>");
+                document.write(squareAndSum(1,2));
+
+            </script>
+        </p>
+    </div>
+    <div>
+        <ul>
+            <li><a href="../index.html">Volver a pagina principal</a></li>
+        </ul>
+    </div>
+</body>
+</html>

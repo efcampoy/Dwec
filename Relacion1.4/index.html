@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="./js/app.js"></script>
+
+
+</head>
+<body>
+    <h1>Relación de ejercicios 1.4</h1>
+    <div>
+        <h2>Ejercicio 1</h2>
+        <script>
+            document.write("<p>El resultado de la suma con varios argumentos es: "+sum(1, 2, 3, 4)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 2</h2>
+        <script>
+            document.write("<p>El resultado de la suma, ignorando argumentos que son string: "+ addOnlyNums(1, 2,"kdj")+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 3</h2>
+        <script>
+            document.write("<p>El numero de argumentos que se han pasado son: "+ addOnlyNums(1, 2,"kdj")+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 4</h2>
+        <script>
+            const cars = ["Saab", "Volvo", "BMW"];
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.write("<p>El resultado es: "+combineTwoArrays(cars,fruits)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 5</h2>
+        <script>
+            document.write("<p>El resultado  de todos los argumentos pasados es: "+sumEveryOther(10,2,11)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 6</h2>
+        <script>
+            let number = 2;
+            document.write("<p>El numero "+number+" es "+divisible(number)+"</p>");
+        </script>
+    <div>
+        <h2>Ejercicio 7</h2>
+        <script>
+            let number1 = 3;
+            let number2 = 3;
+            document.write("<p>El numero "+number1+" ", divisibleEntre(number1,number2)," "+ number2+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 8</h2>
+        <script>
+            let valor = 3;
+            let rangoInf = 20;
+            let rangoSup = 40;
+            document.write("<p>"+rango(valor,rangoInf,rangoSup)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 9</h2>
+        <script>
+            let numero = 33553;
+            document.write("<p>"+tieneTresDigitos(numero)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 10</h2>
+        <script>
+            let lado1 = 20;
+            let lado2 = 20;
+            document.write("<p>El area del rectangulo es: "+areaRectangulo(lado1, lado2)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 11</h2>
+        <script>
+
+            document.write("<p>El indice de masa corporal es: "+imc()+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 12</h2>
+        <script>
+            let preciOriginal = 101;
+            let descuento = 13;
+            document.write("<p>El precio final despues de aplicar el descuento es: "+precioFinal(preciOriginal,descuento)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 13</h2>
+        <script>
+            let facto = 5;
+            document.write("<p>El factorial de "+facto+" es: "+factorial(facto)+"</p>");
+        </script>
+    </div>
+    <div>
+        <h2>Ejercicio 14</h2>
+        <script>
+            let divisor = 4;
+            let dividendo = 25
+            document.write("<p>El dividendo "+dividendo+" : "+divisible(dividendo,divisor)+" el divisor "+divisor+"</p>");
+        </script>
+    </div>
+    <div>
+        <ul>
+            <li><a href="../index.html">Volver a pagina principal</a></li>
+        </ul>
+    </div>
+</body>
+</html>
