@@ -277,6 +277,7 @@ The following credit card numbers are invalid:
 function validateCreditCard() {
 
     let numeroTarjeta = "4444444444444444";
+    console.log("validateCreditCard ("+numeroTarjeta+")");
 
     let valida = true;
     let contador = 0;
@@ -326,7 +327,8 @@ function validateCreditCard() {
 
         valida = false;
     }
-
+    console.log(valida);
+    
     return valida;
 }
 
@@ -342,8 +344,8 @@ before checking if the input credit card number is valid.) */
 function validateCreditCard2() {
 
     let leerNumeroTarjeta = "9999-7777-8888-0000";
-    // let numeroTarjeta = leerNumeroTarjeta.replaceAll("-","");
-
+    //Esta forma es valida  let numeroTarjeta = leerNumeroTarjeta.replaceAll("-","");
+    console.log("validateCreditCard ("+leerNumeroTarjeta+")");
     let numeroTarjeta = "";
 
     for (let i = 0; i < leerNumeroTarjeta.length; i++) {
@@ -353,7 +355,6 @@ function validateCreditCard2() {
         }
     }
 
-    console.log(numeroTarjeta)
     let valida = true;
     let contador = 0;
     let digitDifferent = 0;
@@ -402,6 +403,7 @@ function validateCreditCard2() {
 
         valida = false;
     }
-
+    console.log(valida);
+    
     return valida;
 }
