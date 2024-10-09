@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización con Leaflet</title>
+    <!-- Incluir el CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Estilo para el mapa */
+        #map {
+            height: 100vh; /* Altura del mapa */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor del mapa -->
+    <div id="map"></div>
+
+    <!-- Incluir el JavaScript de Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializar el mapa
+        var map = L.map('map').setView([0, 0], 2); // Vista inicial en latitud 0 y longitud 0
+
+        // Cargar y mostrar el mapa desde OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Función para manejar la geolocalización
+        function onLocationFound(e) {
+            var radius = e.accuracy / 2;
+
+            // Añadir un marcador en la posición actual
+            L.marker(e.latitude, e.longitude).addTo(map)
+                .bindPopup("Estás aquí.")
+                .openPopup();
+
+            // Añadir un círculo que muestra la precisión de la ubicación
+            L.circle(e.latlng, radius).addTo(map);
+            map.setView(e.latlng, 13); // Ajustar la vista del mapa a la ubicación
+        }
+
+        // Función para manejar errores de geolocalización
+        function onLocationError(e) {
+            alert(e.message);
+        }
+
+        // Comprobar la geolocalización
+        map.locate({setView: true, maxZoom: 16});
+        map.on('locationfound', onLocationFound);
+        map.on('locationerror', onLocationError);
+    </script>
+</body>
+</html>
