@@ -129,7 +129,7 @@ function ejercicio6() {
 
     return `Los sueldos son: <br> vendedor1: ${sueldos.vendedor1} <br> vendedor2: ${sueldos.vendedor2} <br> vendedor3: ${sueldos.vendedor3} <br> vendedor4: ${sueldos.vendedor4}`
 }
-ejercicio6();
+
 /* Escribe las funciones para llevar a cabo las siguientes operaciones para un array de una
 dimensión:
 a) Establecer los 10 elementos del array a cero.
