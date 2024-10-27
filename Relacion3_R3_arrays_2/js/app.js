@@ -107,10 +107,29 @@ Diseña una web que permita dar de alta a vendedores, introducir sus ventas e in
 sería su sueldo final */
 
 function ejercicio6() {
-    //TODO
 
+    const sueldos = {
+        vendedor1: 200,
+        vendedor2: 200,   
+        vendedor3: 200,
+        vendedor4: 200
+    };
+
+    let ventas = {
+        vendedor1: 1000,
+        vendedor2: 4000,
+        vendedor3: 2000,
+        vendedor4: 5000
+    };
+
+    sueldos.vendedor1 += ventas[`vendedor${1}`] * 0.09;
+    sueldos.vendedor2 += ventas[`vendedor${2}`] * 0.09;
+    sueldos.vendedor3 += ventas[`vendedor${3}`] * 0.09;
+    sueldos.vendedor4 += ventas[`vendedor${4}`] * 0.09;
+
+    return `Los sueldos son: <br> vendedor1: ${sueldos.vendedor1} <br> vendedor2: ${sueldos.vendedor2} <br> vendedor3: ${sueldos.vendedor3} <br> vendedor4: ${sueldos.vendedor4}`
 }
-
+ejercicio6();
 /* Escribe las funciones para llevar a cabo las siguientes operaciones para un array de una
 dimensión:
 a) Establecer los 10 elementos del array a cero.
