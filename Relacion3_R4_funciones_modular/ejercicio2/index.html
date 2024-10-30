@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../modAuxiliar.js"></script>
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+
+    <p>
+        <pre>
+            <code>
+                /** * @name toHackerSpeak 
+                    * @description Convierte un string a "Hacker Speak". Para hacerlo, tiene que transformar las "a" en 4, las "e" en 3, las "i" 
+                    * en 1, las "o" en 0 y las "s" en 5 * * @param {string} text * @returns {String} - El texto convertido a "Hacker Speak" * * @example 
+                    * toHackerSpeak("I'm a hacker now") // returns "1'm 4 h4ack3r n0w" 
+                    */
+
+                    const toHackerSpeak = (text) => {
+                        let hackerText = ''; 
+                    
+                        // Reemplazos
+                        const replacements = { a: '4', e: '3', i: '1', o: '0', s: '5' }; 
+                    
+                        // Reemplazar o agregar carácter
+                        text.split('').forEach((char) => {
+                            hackerText += replacements[char] || char; 
+                        })
+                    
+                        return hackerText; 
+                    }
+                    document.write(toHackerSpeak("I'm a hacker now"))
+
+                    Resultado:
+
+                    <script>
+                        document.write(toHackerSpeak("I'm a hacker now"));
+                    </script>
+            </code>
+        </pre>
+
+    </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

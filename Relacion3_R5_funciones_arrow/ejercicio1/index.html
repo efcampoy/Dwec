@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1>Ejercicio1</h1>
+    <p>
+        1.-Crea un fichero FuncionesArrow.js en el que transformes las siguientes funciones utilizando la sintaxis de las funciones arrow. 
+        Crea una página html donde demuestres el uso de dichas funciones:
+    </p>
+    <p>
+        <pre>
+            <code>
+                function sum(num1, num2) {
+                    return num1 + num2;
+                }
+        
+                sum(40, 2);
+                sum(42, 0);
+            </code>
+        </pre>
+    </p>
+    <p>
+        <pre>
+            <code>
+                const sum = (num1,num2) => num1 + num2;
+
+                sum(40,2);
+                sum(42,0);
+            </code>
+        </pre>
+    </p>
+    <p>Resultado:
+        <script>
+            document.write("<br>"+sum(40,2)+"<br>");
+            document.write(sum(42,0));
+        </script>
+    </p>
+    <p>
+        <pre>
+            <code>
+                function stringLength(str){ 
+                    console.log(`the length of "${str}" is:`, str.length) 
+                }
+
+                let longestCityNameInTheWorld = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+                stringLength(longestCityNameInTheWorld)
+                Resultado:
+                the length of "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu" is: 85
+            </code>
+        </pre>
+    </p>
+    <p>
+        <pre>
+            <code>
+                const stringLength = str => console.log(`the length of "${str}" is:`, str.length);
+                stringLength(longestCityNameInTheWorld);
+                resultado:
+                <script>
+                    let longestCityNameInTheWorld = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+                    document.write(stringLength(longestCityNameInTheWorld));
+                </script>
+            </code>
+        </pre>
+    </p>
+
+    <p>
+        <pre>
+            <code>
+                function stringLength2(str){ 
+                    let length = str.length; 
+                    console.log(`the length of "${str}" is:`, length); 
+                    return str.length 
+                } 
+                stringLength2("willynilly")
+                Resultado:
+                the length of "willynilly" is: 10
+
+                const stringLength2 = str => console.log(`The length of "${str}" is: ${str.length}`);
+                stringLength2("willynilly");
+                Resultado:
+
+                <script>
+                    document.write(stringLength2("willynilly"));
+                </script>
+            </code>
+        </pre>
+    </p>
+    <p>
+        <pre>
+            <code>
+                let alerts = ["Hey, you are awesome", "You are so wonderful", "What a marvel you are", "You're so lovely", "You're so sweet that I'd think you're a sweet potato -- and I LOOOOVE POTATOES"] 
+                function showAlert(name){ 
+                    alert(alerts[(Math.floor(Math.random()*alerts.length))] + `, ${name}!`) 
+                }
+                showAlert("you ball of fluff")
+
+                const showAlert = name => alert(alerts[(Math.floor(Math.random()*alerts.length))] + `, ${name}!`);
+
+                <button onclick="showAlert('you ball of fluff')">showAlert</button>
+            </code>
+        </pre>
+    </p>
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</body>
+</html>
