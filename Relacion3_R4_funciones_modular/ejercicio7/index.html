@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../modAuxiliar.js"></script>
+    <title>Ejercicio7</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+
+    <p>
+        <pre>
+            <code>
+                /**
+                * @name removeWords
+                * @description Dado un string y un array de palabras a remover, devuelve elstring sin las palabras removidas
+                *               
+                * @param {string} str - Texto a recortar
+                * @param {string[]} words - Palabras a remover
+                * @returns {string} - Texto resultante con las palabras removidas
+                *
+                * @example
+                * removeWords("This is a really bad test", ["really", "bad"]) // returns "This is a test"
+                */
+
+                const removeWords = (str, words = []) => {
+
+                    const salida = str.split(' '); 
+                
+                    words.forEach(element => {
+                        salida.forEach((word, index) => {
+                            if (word === element) {
+                                salida.splice(index, 1);
+                            }
+                        });
+                    });
+                
+                    return salida.join(' ');
+                };
+                
+                document.write(removeWords("This is a really bad test", ["really", "bad"]));                    
+                        
+                Resultado:
+
+                <script>
+                    document.write(removeWords("This is a really bad test", ["really", "bad"]));
+                </script>
+            </code>
+        </pre>
+
+    </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

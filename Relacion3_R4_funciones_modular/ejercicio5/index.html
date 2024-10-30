@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../modAuxiliar.js"></script>
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+
+    <p>
+        <pre>
+            <code>
+                /**
+                * @name removeDuplicates
+                * @description Remueve duplicados de un array
+                *
+                * @param {[]} arr - Array con duplicados a remover
+                * @returns {[]} - El array resultante sin duplicados
+                *
+                * @example
+                * removeDuplicates([4, 5, 10, 4, 10, 2]) // returns [4, 5, 10, 2]
+                */
+
+                const removeDuplicates = (array=[]) => {
+                    const salida = [];
+                    array.forEach((element) => {
+
+                    if(!salida.includes(element)){
+                        salida.push(element);
+                    }
+                })
+                return salida;
+                }
+
+                document.write(removeDuplicates([4, 5, 10, 4, 10, 2]));
+                    
+                        
+                Resultado:
+
+                <script>
+                    document.write(removeDuplicates([4, 5, 10, 4, 10, 2]));
+                </script>
+            </code>
+        </pre>
+
+    </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

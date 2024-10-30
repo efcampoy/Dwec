@@ -38,3 +38,107 @@ const toHackerSpeak = (text) => {
     return hackerText; 
 }
 
+/**
+* @name getFileExtension
+* @description Obtiene la extensión de un archivo
+*
+* @param {string} file - El nombre del archivo a obtener la extensión
+* @returns {String} - La extensión del archivo
+*
+* @example
+* getFileExtension("imagen.jpg") // returns "jpg"
+*/
+
+
+const getFileExtension = file => file.split(".")[1];
+
+
+/**
+* @name flatArray
+* @description Dado un array 2D, devuelve un array 1D que contiene todos los
+ítems
+*
+* @param {[][]} arr - Array 2D a "aplanar"
+* @returns {[]} - El array "aplanado"
+*
+* @example
+* flatArray([[1, 5, 4], [3, 10], [2, 5]]) // returns [1, 5, 4, 3, 10, 2, 5]
+*/
+
+const flatArray = array => {
+    const salida = [];
+
+    array.forEach((subArray) => subArray.forEach((element) => salida.push(element)))
+    return JSON.stringify(salida);
+
+}
+
+/**
+* @name removeDuplicates
+* @description Remueve duplicados de un array
+*
+* @param {[]} arr - Array con duplicados a remover
+* @returns {[]} - El array resultante sin duplicados
+*
+* @example
+* removeDuplicates([4, 5, 10, 4, 10, 2]) // returns [4, 5, 10, 2]
+*/
+
+const removeDuplicates = (array=[]) => {
+    const salida = [];
+    array.forEach((element) => {
+
+        if(!salida.includes(element)){
+            salida.push(element);
+        }
+    })
+    return salida;
+}
+
+/**
+* @name countLetter
+* @description Devuelve la cantidad de veces que una letra aparece en un str
+ing
+*
+* @param {string} letter - Letra a contar
+* @param {string} text - Texto sobre el que realizar la cuenta de {letter}
+* @returns {Number} - Número de veces que aparece {letter} en {text}
+*
+* @example
+* countLetter("a", "javascript") // returns 2
+*/
+
+const countLetter = (letter,text) => {
+    const separador = text.split('');
+    let countLetter = 0;
+    separador.forEach((element) => letter === element ? countLetter++:'');
+    return countLetter;
+}
+
+/**
+* @name removeWords
+* @description Dado un string y un array de palabras a remover, devuelve el
+string sin las palabras removidas
+*
+* @param {string} str - Texto a recortar
+* @param {string[]} words - Palabras a remover
+* @returns {string} - Texto resultante con las palabras removidas
+*
+* @example
+* removeWords("This is a really bad test", ["really", "bad"]) // returns "This is a test"
+*/
+
+const removeWords = (str, words = []) => {
+
+    const salida = str.split(' '); 
+
+    words.forEach(element => {
+        salida.forEach((word, index) => {
+            if (word === element) {
+                salida.splice(index, 1);
+            }
+        });
+    });
+
+    return salida.join(' ');
+};

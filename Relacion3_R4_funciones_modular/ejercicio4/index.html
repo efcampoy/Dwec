@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../modAuxiliar.js"></script>
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+
+    <p>
+        <pre>
+            <code>
+                /**
+                * @name flatArray
+                * @description Dado un array 2D, devuelve un array 1D que contiene todos los ítems
+                *
+                * @param {[][]} arr - Array 2D a "aplanar"
+                * @returns {[]} - El array "aplanado"
+                *
+                * @example
+                * flatArray([[1, 5, 4], [3, 10], [2, 5]]) // returns [1, 5, 4, 3, 10, 2, 5]
+                */
+
+                const flatArray = array => {
+                    const salida = [];
+
+                    array.forEach((subArray) => subArray.forEach((element) => salida.push(element)))
+                    return JSON.stringify(salida);
+                }
+
+                document.write(flatArray([[1, 5, 4], [3, 10], [2, 5]]));
+                    
+                Resultado:
+
+                    <script>
+                        document.write(flatArray([[1, 5, 4], [3, 10], [2, 5]]));
+                    </script>
+            </code>
+        </pre>
+
+    </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>
