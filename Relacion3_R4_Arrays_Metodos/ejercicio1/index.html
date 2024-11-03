@@ -9,24 +9,248 @@
 <body>
     <h1>Ejercicio 1</h1>
     <p>
-        1) Write examples with Arrays to solve the next problems using only Array methods (like
+        1) Write examples with Arrays to solve the next problems using only Array methods (like 
             iterators, etc…):
-            • find largest number
-            • find longest string
-            • find even numbers
-            • find odd numbers
-            • find words that contain ‘is’
-            • assert all numbers are divisible by three
-            • zip two arrays together
-            • sort joined array from smallest to largest
-            • remove the first word in the array
-            • place a new word at the start of the array
-            • replace some elements
-    </p>
-    <p>
-        <script>
-            document.write(ejercicio1());           
-        </script>
+
+            <pre>
+                <code>
+                 <strong>• find largest number</strong> 
+
+                  function findLargestNumbre(array) {
+                        let salida = 0;
+                        for (let i = 0; i < array.length; i++) {
+                
+                            let number = array[i];
+                
+                            if (salida < number) {
+                                salida = number;
+                            }
+                
+                        }
+                    return salida;
+                }
+                const array = [99,1,5,33,102,66,4,8];
+                document.write(findLargestNumbre(array));
+                Resultado: 
+
+                <script>
+                    const array = [99,1,5,33,102,66,4,8];
+                    document.write(findLargestNumbre(array));
+                </script>
+
+                <strong>• find longest string</strong>
+
+                    function findLargestNumbre(array) {
+                        let salida = 0;
+                        for (let i = 0; i < array.length; i++) {
+                    
+                            let number = array[i];
+                    
+                            if (salida < number) {
+                                salida = number;
+                            }
+                    
+                        }
+                        return salida;
+                    }
+                    const array = ["hola que tal", "siiiiiiiiiiiiiiiiiiii", "vaya"]
+                    document.write(findLongestString(array));
+                    Resultado: 
+
+                    <script>
+                        const array2 = ["hola que tal", "siiiiiiiiiiiiiiiiiiii", "vaya"];
+                        document.write(findLongestString(array2));
+                    </script>
+
+                    <strong>• find even numbers</strong>
+
+                    const findEven = array => {
+                        const even = [];
+                        array.forEach((element) => {
+                    
+                            if (element % 2 === 0) {
+                    
+                                even.push(element);
+                            }
+                        })
+                        return even;
+                    };
+
+                    const even = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                    document.write(findEven(even));
+                    Resultado: 
+
+                    <script>
+                        const even = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                        document.write(findEven(even));
+                    </script>
+
+
+                    <strong>• find odd numbers</strong>
+
+                    function findOdd(array = []) {
+                        const even = []
+                        for (let i = 0; i < array.length; i++) {
+                    
+                            if (array[i] % 2 !== 0) {
+                                even.push(array[i])
+                            }
+                    
+                        }
+                        return even
+                    }
+
+                    const odd = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                    document.write(findOdd(odd));
+                    Resultado: 
+
+                    <script>
+                        const odd = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                        document.write(findOdd(odd));
+                    </script>
+                    <strong>• find words that contain ‘is’</strong>
+                
+                    function findWordsContainIs(array=[]) {
+                        const wordIs = [];
+                        for (let i = 0; i < array.length; i++) {
+                            let word = array[i];
+                        
+                            if(word.includes("is")){
+                                wordIs.push(array[i])
+                            }  
+                        }
+                
+                        return wordIs;
+                    }
+
+                    const words = ["hola","consiste","siesta","nada","lista"];
+                    document.write(findWordsContainIs(words));
+                    Resultado: 
+
+                    <script>
+                        const words = ["hola","consiste","siesta","nada","lista"];
+                        document.write(findWordsContainIs(words));
+                    </script>
+                    
+                    <strong>• assert all numbers are divisible by three</strong>
+
+                    function findDivisibleBy3(array = []) {
+                        const divisibleBy3 = [];
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] % 3 === 0) {
+                                divisibleBy3.push(array[i]);
+                            }
+                        }
+                        return divisibleBy3;
+                    }
+
+                    const divisibleBy3 = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                    document.write(findDivisibleBy3(divisibleBy3));
+                    Resultado: 
+
+                    <script>
+                        const divisibleBy3 = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                        document.write(findDivisibleBy3(divisibleBy3));
+                    </script>
+
+                    <strong>• zip two arrays together</strong>
+                    
+                    function zipArrays(arr1 = [], arr2 = []) {
+                        const length = Math.min(arr1.length, arr2.length);
+                        const zipped = [];
+                    
+                        for (let i = 0; i < length; i++) {
+                            zipped.push([arr1[i], arr2[i]]);
+                        }
+                    
+                        return zipped;
+                    }
+                    
+                    const arr1 = [1, 2, 3];
+                    const arr2 = [4, 5, 6];
+                    document.write(zipArrays(arr1, arr2));
+                    Resultado: 
+
+                    <script>
+                        const arr1 = [1, 2, 3];
+                        const arr2 = [4, 5, 6];
+                        document.write(zipArrays(arr1, arr2));
+                    </script>
+
+                    <strong>• sort joined array from smallest to largest</strong>
+
+                    function sortJoinedArray(array = []) {
+                        return array.sort((a, b) => a - b);
+                    }
+
+                    const joinedArray = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                    document.write(sortJoinedArray(joinedArray));
+                    Resultado: 
+
+                    <script>
+                        const joinedArray = [99, 1, 5, 33, 102, 66, 4, 8, 2];
+                        document.write(sortJoinedArray(joinedArray));
+                    </script>
+
+                    <strong>• remove the first word in the array</strong>
+
+                    function removeFirstWord(array = []) {
+                        return array.slice(1);
+                    }
+
+                    const removed = ["hola", "consiste", "siesta", "nada", "lista"];
+                    document.write(removeFirstWord(array));
+                    Resultado: 
+
+                    <script>
+                        const removed = ["hola", "consiste", "siesta", "nada", "lista"];
+                        document.write(removeFirstWord(array));
+                    </script>
+
+                    <strong>• place a new word at the start of the array</strong>
+
+                    function addWordAtStart(array, word) {
+                        array.unshift(word);
+                        return array;
+                    }
+
+                    const addword = ["hola", "consiste", "siesta", "nada", "lista"];
+                    document.write(addWordAtStart(array, "nuevo"));
+                    Resultado: 
+
+                    <script>
+                        const addword = ["hola", "consiste", "siesta", "nada", "lista"];
+                        document.write(addWordAtStart(array, "nuevo"));
+                    </script>
+
+                    <strong>• replace some elements</strong>
+
+                    function replaceElements(array, word) {
+                        array = array.map(item => {
+                            // Convertir a cadena en caso de que item no sea una cadena
+                            if (typeof item === "string") {
+                                let words = item.split(" ");
+                                return words.map(w => (w === "is" ? word : w)).join(" ");
+                            } else {
+                                return item; // Si no es una cadena, devolver el elemento tal como está
+                            }
+                        });
+                        return array;
+                    }
+                    
+
+                    const replaced = ["hola", "consiste", "siesta", "nada", "lista"];
+                    document.write(replaceElements(array, "nuevo"));
+                    Resultado: 
+
+                    <script>
+                        const replaced = ["hola", "consiste", "siesta", "nada", "lista"];
+                        document.write(replaceElements(array, "nuevo"));    
+                    </script>
+                </code>
+            </pre>
+          
+            
     </p>
 
     <p>

@@ -24,7 +24,8 @@ function findLargestNumbre(array) {
 
 /* • find longest string
 const findLongestString3 = (array=[]) => array.reduce((previus,current) => previus.length > current.length ? previus : current); */
-const array = ["hola que tal", "siiiiiiiiiiiiiiiiiiii", "vaya"]
+/* const array = ["hola que tal", "siiiiiiiiiiiiiiiiiiii", "vaya"]
+console.log(findLongestString(array)); */
 
 function findLongestString(array = []) {
     let cadenaMasLarga = "";
@@ -38,7 +39,7 @@ function findLongestString(array = []) {
         }
 
     }
-    return salida;
+    return cadenaMasLarga;
 }
 
 
@@ -46,7 +47,7 @@ function findLongestString(array = []) {
 
 //• find even numbers
 /* const findEven = (array) => array.filter((element) => element % 2 === 0);
-const array2 = [99, 1, 5, 33, 102, 66, 4, 8, 2]
+const array2 = [99, 1, 5, 33, 102, 66, 4, 8, 2]*/
 
 const findEven = array => {
     const even = [];
@@ -58,23 +59,13 @@ const findEven = array => {
         }
     })
     return even;
-}; */
+}; 
 
 
-function findEven(array = []) {
-    const even = []
-    for (let i = 0; i < array.length; i++) {
 
-        if (array[i] % 2 === 0) {
-            even.push(array[i])
-        }
-
-    }
-    return even
-}
 
 /* • find odd numbers */
-function findEven(array = []) {
+function findOdd(array = []) {
     const even = []
     for (let i = 0; i < array.length; i++) {
 
@@ -146,13 +137,28 @@ function addWordAtStart(array, word) {
     array.unshift(word);
     return array;
 }
+
+
 /*
 • replace some elements */
 
 function replaceElements(array, word) {
-    array = array.map(item => item.replace("is", word));
+    array = array.map(item => {
+        // Convertir a cadena en caso de que item no sea una cadena
+        if (typeof item === "string") {
+            let words = item.split(" ");
+            return words.map(w => (w === "is" ? word : w)).join(" ");
+        } else {
+            return item; // Si no es una cadena, devolver el elemento tal como está
+        }
+    });
     return array;
 }
+
+
+
+
+
 
 /* 2) Over an array with names, find all entries whose firstname starts with ‘J’, create projection
 combined of only the initials of the name and then sort alphabetically */
@@ -173,12 +179,12 @@ function findAndSortNames(names) {
     return initials;
 }
 
-let namesArray = [
+/* let namesArray = [
     { firstName: "John", lastName: "Doe" },
     { firstName: "Jane", lastName: "Smith" },
     { firstName: "Alice", lastName: "Johnson" },
     { firstName: "Jack", lastName: "Brown" },
-];
+]; */
 
 /* 4) Develop a function wich be able to create a random treasure hunt like the previous one. As
 arguments it will recibe the dimensions of the array (at least 5x5) and must return a valid
@@ -209,52 +215,50 @@ function createTreasureHunt(rows, cols) {
     return treasureHunt;
 }
 
-// Ejemplo de uso
-const treasureHuntArray = createTreasureHunt(5, 5);
-console.log(treasureHuntArray);
 
-/* 5) Write a program to search for the “saddle points” in a 5 by 5 array of integers. A saddle point is
-a cell whose value is greater than or equal to any in its row, and less than or equal to any in its
-column. There may be more than one saddle point in the array. Print out the coordinates of any
-saddle points your program finds. Print out “No saddle points” if there are none. */
+/* 6)One classic method for composing secret messages is called a square code. The spaces are
+removed from the english text and the characters are written into a square (or rectangle). For
+example, the sentence “If man was meant to stay on the ground god would have given us roots”
+is 54 characters long, so it is written into a rectangle with 7 rows and 8 columns.
+ ifmanwas
+ meanttos
+ tayonthe
+ groundgo
+ dwouldha
+ vegivenu
+ sroots
+The coded message is obtained by reading down the columns going left to right. For example,
+the message above is coded as:
+imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau */
+
+
+
 function squareCode(message) {
     // Eliminar espacios y convertir a minúsculas usando split, filter y join
-    const cleanedMessage = message
+    const cleanedMessage = message  
         .split(' ') // Dividir el mensaje en palabras
-        .filter(word => word.length > 0) // Filtrar palabras vacías
-        .join('') // Unir las palabras en una sola cadena
-        .toLowerCase(); // Convertir a minúsculas
+        .filter(word => word.length > 0) // Filtrar palabras  vacías
+        .join('').toLowerCase(); // Convertir a minúsculas
 
     const length = cleanedMessage.length;
-
-    // Calcular el número de filas y columnas
-    const rows = Math.floor(Math.sqrt(length));
+    const rows = Math.ceil(Math.sqrt(length));
     const cols = Math.ceil(length / rows);
 
-    // Crear un array bidimensional para almacenar el mensaje
-    const grid = [];
-    for (let i = 0; i < rows; i++) {
-        grid[i] = cleanedMessage.slice(i * cols, i * cols + cols);
-    }
+    // Crear una cadena vacía para almacenar el mensaje codificado
+    let encodedMessage = '';
 
-    // Leer el mensaje por columnas
-    const codedMessage = [];
+    // Leer el mensaje por columnas y agregarlo a la cadena codificada
     for (let col = 0; col < cols; col++) {
-        let columnMessage = '';
         for (let row = 0; row < rows; row++) {
-            if (grid[row] && grid[row][col]) {
-                columnMessage += grid[row][col];
+            const index = row * cols + col;
+            if (index < length) {
+                encodedMessage += cleanedMessage[index];
             }
         }
-        codedMessage.push(columnMessage);
     }
 
-    // Devolver el mensaje codificado como una cadena unida por espacios
-    return codedMessage.join(' ');
+    return encodedMessage;
 }
 
-// Ejemplo de uso
-const message = "If man was meant to stay on the ground god would have given us roots";
-const encodedMessage = squareCode(message);
-console.log(encodedMessage);
+
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+
+  <p>
+    <pre>
+        <code>
+            <strong>
+                2) Over an array with names, find all entries whose firstname starts with ‘J’, create projection
+                combined of only the initials of the name and then sort alphabetically
+            </strong>
+
+            function findAndSortNames(names) {
+                const initials = [];
+            
+                // Filtrar por nombres que empiecen por J
+                for (let i = 0; i < names.length; i++) {
+                    if (names[i].firstName.startsWith('J')) {
+                        initials.push(`${names[i].firstName.charAt(0)}.${names[i].lastName.charAt(0)}.`);
+                    }
+                }
+            
+                // Ordenar alfabéticamente
+                initials.sort();
+            
+                return initials;
+            }
+
+            let namesArray = [
+                { firstName: "John", lastName: "Doe" },
+                { firstName: "Jane", lastName: "Smith" },
+                { firstName: "Alice", lastName: "Johnson" },
+                { firstName: "Jack", lastName: "Brown" },
+            ];
+
+            documete.write(findAndSortNames(namesArray));
+            Resultado:
+
+            <script>
+                let namesArray = [
+                    { firstName: "John", lastName: "Doe" },
+                    { firstName: "Jane", lastName: "Smith" },
+                    { firstName: "Alice", lastName: "Johnson" },
+                    { firstName: "Jack", lastName: "Brown" },
+                ];
+                document.write(findAndSortNames(namesArray));
+            </script>
+        </code>
+    </pre>
+  </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

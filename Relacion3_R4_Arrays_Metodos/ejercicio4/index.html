@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+
+  <p>
+    <pre>
+        <code>
+            <strong>
+                4) Develop a function wich be able to create a random treasure hunt like the previous one. As
+                    arguments it will recibe the dimensions of the array (at least 5x5) and must return a valid
+                    treasure hunt array.
+            </strong>
+
+            function createTreasureHunt(rows, cols) {
+                // Validar que las dimensiones sean al menos 5x5
+                if (rows < 5 || cols < 5) {
+                    throw new Error("Las dimensiones deben ser al menos 5x5.");
+                }
+            
+                // Crear un array vacío
+                const treasureHunt = Array.from({ length: rows }, () => Array(cols).fill('X'));
+            
+                // Generar una posición aleatoria para el tesoro
+                const treasureRow = Math.floor(Math.random() * rows);
+                const treasureCol = Math.floor(Math.random() * cols);
+                treasureHunt[treasureRow][treasureCol] = 'T'; // 'T' representa el tesoro
+            
+                // Llenar el resto del array con espacios vacíos
+                for (let i = 0; i < rows; i++) {
+                    for (let j = 0; j < cols; j++) {
+                        if (i !== treasureRow || j !== treasureCol) {
+                            treasureHunt[i][j] = ' '; // ' ' representa un espacio vacío
+                        }
+                    }
+                }
+            
+                return treasureHunt;
+            }
+
+            const treasureHunt = createTreasureHunt(10, 10);
+            document.write(treasureHunt);
+
+            Resultado:
+
+            <script>
+                const treasureHunt = createTreasureHunt(5, 5);
+                document.write(treasureHunt);
+            </script>
+
+            
+        </code>
+    </pre>
+  </p>
+
+    <p>
+        <ul>
+            <li>
+                <a href="../index.html">Volver atras</a>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>
