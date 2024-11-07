@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+
+    <p>
+        4.- Viviendas.html
+Queremos hacer una aplicación en JavaScript para gestionar las viviendas (casas) de una serie de clientes de una empresa dedicada a la seguridad y protección de las mismas. Para ello queremos almacenar la siguiente información de cada vivienda:
+• calle.
+• número.
+• código postal.
+Se pide:
+• Crear un objeto que nos permita instanciar casas. Cada vez que instanciemos una casa le pasaremos la calle, número y código postal como parámetros. Se pide además crear los siguientes métodos para el objeto Casa:
+• setNumero(numero) // Se le pasa el nuevo número de la casa para que lo actualice.
+• setCalle(calle) // Se le pasa el nuevo nombre de la calle para que lo actualice.
+• setCodigoPostal(codigo) // Se le pasa el nuevo número de código postal de la casa.
+• imprimeCalle // Devuelve el nombre de la calle de la casa.
+• imprimeNumero // Devuelve el número de la casa.
+• imprimeCodigoPostal // Devuelve el código postal de la casa.
+• Cada vez que se da de alta una nueva casa, que muestre automáticamente un mensaje del estilo:
+Nueva casa en calle: xxxxxx, nº: xx, CP: xxxxx.
+Aquí se muestra un ejemplo de lo que tendría que mostrar la aplicación:
+<!-- Instanciamos 3 objetos casaA, casaB y casaC con estos datos:
+• Nueva casa en calle: Garcia Prieto, nº: 58, CP: 15706.
+• Nueva casa en calle: Camino Caneiro, nº: 29, CP: 32004.
+• Nueva casa en calle: San Clemente, nº: s/n, CP: 15705.
+• El código postal de la casaA es: 15706.
+• La calle de la casaC es: San Clemente. -->
+    </p>
+    <p>
+        <br><br>
+        <script>
+            // Instanciamos 3 objetos casaA, casaB y casaC con estos datos:
+            const casaA = new Casa("Garcia Prieto", 58, 15706);
+  
+            const casaB = new Casa("Camino Caneiro", 29, 32004);
+          
+            const casaC = new Casa("San Clemente", "s/n", 15705);  
+   
+        </script>
+    </p>
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</body>
+</html>

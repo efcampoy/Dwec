@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+
+    <p>
+        5.- CentroEducativo.html
+        Queremos gestionar los colegios/centros educativos de una determinada compañía de enseñanzas concertadas.
+        ✓ Crea el objeto Alumno, con las siguientes propiedades:
+        Identificador del alumno (número)
+        Nombre del alumno
+        Nota media
+        ✓ Crea el objeto Colegio con las siguientes propiedades:
+        Nombre del colegio
+        Número de aulas
+        Número de alumnos
+        Array con los datos de los alumnos
+        Y los métodos del objeto Colegio:
+        • Un constructor que permita instanciar colegios pasando como parámetros el nombre, número de aulas y número de alumnos, y que inicialice el array de alumnos: la nota media por defecto será de 5.00 y el nombre de cada alumno será alumno1, alumno2, alumno3, … El identificador para cada alumno será 0, 1, 2…
+        • consultarNotaMedia: se le pasa como parámetro el identificador de un alumno, y debe mostrar su nota media.
+        • modificarNotaMedia: se le pasa como parámetros el identificador de un alumno y la nueva nota media.
+        Añade los métodos que consideres necesarios a los objetos/clases anteriores, y crea instancias de los mismo para probar el correcto funcionamiento del ejercicio mediante ejemplos.
+    </p>
+    <p>
+        <br><br>
+        <script>
+            document.write("Alumno:<br>");
+            let alumno = new Alumno(1, "juan", 5.00);
+            document.write(`El numero del alumno es: ${alumno.numero} el nombre es: ${alumno.nombre} y su nota media es: ${alumno.nota_media}`)
+            document.write("Colegio:<br>");
+   
+            const colegio = new Colegio("Iliberis",13,256);
+            document.write(`El nombre del Colegio es:${colegio.nombre} y tiene ${colegio.numero_Aulas} de aulas, en las cuales hay ${colegio.numero_alumnos}`);
+
+ 
+        </script>
+    </p>
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</body>
+</html>
