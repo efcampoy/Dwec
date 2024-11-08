@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/app.js"></script>
+    <title>Ejercicio 1 Puzzle</title>
+
+    <style>
+        #puzzle-container {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .fila {
+            display: flex;
+        }
+        .celda {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            margin: 2px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Puzzle</h1>
+    <div id="puzzle-container"></div>
+    <button onclick="puzzle.generar(); puzzle.dibujar();">Generar Puzzle</button>
+
+    <script>
+        const puzzle = new Puzzle(3, 3);  // Puzzle 3x3
+        puzzle.generar();
+        puzzle.dibujar();
+    </script>
+
+    <div>
+        <ul>
+            <li><a href="../index.html">Volver a pagina principal</a></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

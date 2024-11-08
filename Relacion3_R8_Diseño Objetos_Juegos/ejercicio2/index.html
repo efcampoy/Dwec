@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Raya</title>
+    <style>
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .celda {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            border: 2px solid #000;
+            cursor: pointer;
+            user-select: none;
+        }
+        .celda:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tres en Raya</h1>
+    <div id="tablero"></div>
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+
+    <script src="../js/app.js">
+        crearTablero();
+    </script>
+        <div>
+            <ul>
+                <li><a href="../index.html">Volver a pagina principal</a></li>
+            </ul>
+        </div>
+</body>
+</html>
