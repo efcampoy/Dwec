@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <p>
+        <a href="">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+    </p>
+    <p>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+        <a href="">enlace</a>
+    </p>
+    <p>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="https://www.ebay.es">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+    </p>
+
+    <script>
+
+        function contarEnlaces() {
+            let enlaces = document.getElementsByTagName('a');
+            return enlaces.length;
+        }
+
+        function contarEnlacesGoogle() {
+            const enlaces = document.getElementsByTagName('a');
+            let contador = 0;
+
+
+            for (let i = 0; i < enlaces.length; i++) {
+
+                if (enlaces[i].host.includes("google")) {
+
+                    contador++;
+                }
+
+            }
+
+            return contador;
+        }
+
+        function numeroDeEnlacesTercerParrafo() {
+
+            const parrafos = document.getElementsByTagName('p');
+
+            return parrafos[parrafos.length - 1].children.length
+        }
+
+        function penultimoEnlace() {
+            let enlaces = document.getElementsByTagName('a');
+
+
+            return enlaces[enlaces.length - 2];
+        }
+
+
+        const personas = [{ codigo: 1, dni: "4455544X", Nombre: "Juan López López", edad: 18 }, { codigo: 2, dni: "7778888X", Nombre: "Luis Mateo López", edad: 25 }, { codigo: 3, dni: "6654545M", Nombre: "Pedro Guitierrez López", edad: 41 }, { codigo: 4, dni: "9998897X", Nombre: "María Guitierrez López", edad: 32 },];
+
+    </script>
+
+    <div>Resultado:
+        <script>
+            document.write(contarEnlaces());
+        </script>
+    </div>
+    <div>Resultado numero enlaces a google:
+        <script>
+            document.write(contarEnlacesGoogle());
+        </script>
+    </div>
+    <div>Resultado numero enlaces del tercer parrafo:
+        <script>
+            document.write(numeroDeEnlacesTercerParrafo());
+        </script>
+    </div>
+    <div>Resultado penultimo enlace:
+        <script>
+            document.write(penultimoEnlace());
+        </script>
+    </div>
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</body>
+
+</html>
