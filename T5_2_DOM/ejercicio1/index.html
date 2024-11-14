@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../app.js"></script>
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+
+    <p>
+        Crea una página web con al menos tres párrafos de texto y dentro de ellos un número
+        indeterminado de enlaces (al menos uno debe enlazar a google). Haciendo tan sólo
+        uso del DOM muestra los siguientes datos:
+        • Número de enlaces de la página
+        • Dirección a la que enlaza el penúltimo enlace
+        • Numero de enlaces que enlazan a google
+        • Número de enlaces del tercer párrafo
+    </p>
+
+
+    <p>
+        <a href="">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+    </p>
+    <p>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+        <a href="">enlace</a>
+    </p>
+    <p>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="">enlace</a>
+        <a href="https://www.ebay.es">enlace</a>
+        <a href="https://www.google.com">enlace</a>
+
+        <script>
+            document.write("<br>");
+            document.write("El número de enlaces de la pagina es de: ",contarEnlaces());
+            document.write("<br>");
+            document.write("Dirección a la que enlaza el penúltimo enlace es: ",penultimoEnlace())
+            document.write("<br>");
+            document.write("Numero de enlaces que enlazan a google: ", enlacesQueEnlazanGoogle());
+            document.write("<br>");
+            document.write("Número de enlaces del tercer párrafo: ",numeroEnlacesParrafo3());
+        </script>
+    </p>
+
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</body>
+
+</html>
