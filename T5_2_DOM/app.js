@@ -108,11 +108,11 @@ mostrará una imagen, junto a dos botones “Siguiente” y “Anterior”. Impl
 funcionalidad para poder navegar entre un conjunto de imágenes que tendrás
 previamente preparadas. */
 
-/* const imagenes = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg","5.jpg"]; */
+ /* const imagenes = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg","5.jpg"];  */
 
 function siguienteImagen() {
     let imagen = document.getElementsByTagName('img')[0];
-    let contador = parseInt(imagen.src.split("/")[6].split(".")[0]);
+    let contador = parseInt(imagen.src.split("/").pop().split(".")[0]);
     let siguiente = contador +1;
 
     console.log(contador);
@@ -128,7 +128,7 @@ function siguienteImagen() {
 
 function anteriorImagen() {
     let imagen = document.getElementsByTagName('img')[0];
-    let contador = parseInt(imagen.src.split("/")[6].split(".")[0]);
+    let contador = parseInt(imagen.src.split("/").pop().split(".")[0]);
     let siguiente = contador - 1;
 
     console.log(contador);
