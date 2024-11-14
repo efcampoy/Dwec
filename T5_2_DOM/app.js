@@ -114,10 +114,6 @@ function siguienteImagen() {
     let imagen = document.getElementsByTagName('img')[0];
     let contador = parseInt(imagen.src.split("/").pop().split(".")[0]);
     let siguiente = contador +1;
-
-    console.log(contador);
-    
-    console.log(siguiente);
     
     if (siguiente == imagenes.length) {
         siguiente = 0;
