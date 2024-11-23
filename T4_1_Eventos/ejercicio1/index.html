@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const evento = document.getElementsByTagName("body");
+
+        function handleClick(e) {
+            alert("Has hecho click en el body")
+        }
+        /* document.body.appendChild(evento); */
+        console.log(evento);
+        evento[0].addEventListener("click", handleClick);
+    </script>
+</body>
+</html>

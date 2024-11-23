@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .game-container {
+      text-align: center;
+       background-color: #3498db;
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(5, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+      padding: 30px;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transform: scale(1);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .card.matched {
+      background-color: #2ecc71;
+      cursor: default;
+    }
+
+    .card.flipped {
+      background-color: #e74c3c;
+      transform: scale(1.1);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    #restart {
+      padding: 10px 20px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    
+    <div class="game-container">
+        
+        <h1>JAVASCRIPT PAIRS GAME</h1>
+        <div class="stats">
+          <p>Movimientos: <span id="moves">0</span></p>
+          <p>Tiempo: <span id="timer">00:00</span></p>
+        </div>
+        <div class="game-board"></div>
+        <button id="restart">Reiniciar</button>
+      </div>
+      <script src="app.js"></script>
+<div>
+    <ul>
+        <li>
+            <a href="../index.html">Volver atras</a>
+        </li>
+    </ul>
+</div>
+</body>
+
+</html>
